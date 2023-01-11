@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,9 +27,20 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
 	//Create user
 	@PostMapping("/")
 	public User createUser(@RequestBody User user) throws Exception {
+		
+		//set default profile image
+		user.setProfile("default.png");
+		
+		//encoding password with bCryptPasswordEncoder
+		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		
+		
 		//set user role
 		Set<UserRole> roles=new HashSet<>();
 		

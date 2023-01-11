@@ -48,9 +48,9 @@ export const SignUp = () => {
     navigate('/')
   }
 
-const  handleLoginBtn=(e)=>{
-  navigate("/login");
-}
+  const handleLoginBtn = (e) => {
+    navigate("/login");
+  }
 
 
   const handleFormSubmit = (event) => {
@@ -64,7 +64,7 @@ const  handleLoginBtn=(e)=>{
       phone: user.phone
     };
     UserRegistration.createUser(user1).then(res => {
-      if(res.data===null || res.data.username===null){
+      if (res.data === null || res.data.username === null) {
         swal("Something went wrong !!", "User details should not be empty", "warning");
       }
       swal("Successfully Done !!", "User registration is completed", "success");
@@ -123,7 +123,7 @@ const  handleLoginBtn=(e)=>{
 
             </div>
 
-          
+
             <hr className="rounded"></hr>
             <div className="mt-2">
               <div className="d-flex justify-content-center links reg-login-div">
@@ -141,3 +141,5 @@ const  handleLoginBtn=(e)=>{
 
   )
 }
+
+export default SignUp;

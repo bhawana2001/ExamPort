@@ -1,7 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { FiLogIn } from 'react-icons/fi'
+import { GiNotebook } from 'react-icons/gi'
+import { FaHome } from 'react-icons/fa'
 
-export default function HeaderComponent() {
+export const HeaderComponent = () => {
   let navigate = useNavigate();
 
   function handleSignup() {
@@ -14,15 +17,18 @@ export default function HeaderComponent() {
     navigate("/")
   }
   return (
-      <nav class="navbar bg-primary" >
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1 text-white">ExamPort
-            <button type="button" class="btn btn-primary ml-5" onClick={handleHome}>Homepage</button>
+    <nav class="navbar bg-primary" >
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1 text-white">ExamPort
+          <a className="ml1100 link-nav" onClick={handleHome}>Homepage <span>< FaHome /></span></a>
+          <a className="ml-5 link-nav" onClick={handleSignup}>SignUp <span><GiNotebook /></span></a>
+          <a className=" ml-5 link-nav" onClick={handleLogin}>Login <span className=''><FiLogIn /></span></a>
+        </span>
+      </div>
+    </nav>
 
-            <button type="button" class="btn btn-success ml-5" onClick={handleSignup}>SignUp</button>
-            <button type="button" class="btn btn-info ml-5" onClick={handleLogin}>Login</button>
-          </span>
-        </div>
-      </nav>
+
   )
 }
+
+export default HeaderComponent;

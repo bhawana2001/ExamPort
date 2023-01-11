@@ -1,14 +1,17 @@
 import React from 'react'
 
-function Homepage() {
+export const Homepage = () => {
 
     return (
-        <div className='homepage'>
-            <div >
-            <h1>Welcome to the ExamPort !!</h1>
-            <h2>Your first step solution to get skilled. </h2>
+        <div className="bootstrap-wrapper homepage">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 offset-md-3 text-center" style={{ marginTop: "40px" }}>
+                        <h1>Welcome to the ExamPort</h1>
+                    </div>
+                </div>
             </div>
-            </div>
+        </div>
     )
 }
 

@@ -39,13 +39,13 @@
 }
  .bg-class{
   background-image: linear-gradient(to bottom right,rgb(60, 98, 130),white);
-  height: 91.5vh;  
+  height: 92.5vh;  
   width:100%;
 }
 
 .homepage{
   background-image: linear-gradient(to bottom right,pink,rgb(44, 79, 135));
-  height:91.5vh;
+  height:92.5vh;
   text-align: center;
   
 }
@@ -106,4 +106,46 @@ hr.rounded {
 
 .reg-login-btn{
 width: fit-content;
+}
+
+
+/* login style start here */
+
+.login-img{
+  height:130px;
+  width: 130px;
+  border-radius: 200px;
+  border-style:hidden;
+}
+
+.login-img-div{
+margin-top: 40px;
+}
+
+.login-heading{
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.login-div{
+  padding: 70px;
+}
+
+/* navbar links */
+
+.link-nav{
+
+font-size: 15px;  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ml1100{
+  margin-left: 1050px;
+}
+
+
+.link-nav:hover{
+  cursor: pointer;
 }
