@@ -33,96 +33,148 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
- .bg-class{
-  background-image: linear-gradient(to bottom right,rgb(60, 98, 130),white);
-  height: 92.5vh;  
-  width:100%;
+
+.bg-class {
+  background-image: linear-gradient(to bottom right, rgb(60, 98, 130), white);
+  height: 88vh;
+  /* width:100%; */
 }
 
-.homepage{
-  background-image: linear-gradient(to bottom right,pink,rgb(44, 79, 135));
-  height:92.5vh;
+.homepage {
+  background-image: linear-gradient(to bottom right, pink, rgb(44, 79, 135));
+  height: 88vh;
   text-align: center;
-  
+
 }
 
 /* registration style starts here */
 
-.reg-img-div{
+.reg-img-div {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
 
-.reg-img{
-  height:130px;
+.reg-img {
+  height: 130px;
   width: 130px;
   border-radius: 100px;
-  border-style:hidden;
+  border-style: hidden;
 }
 
-.reg-heading{
+.reg-heading {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-style: italic;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.reg-btn{
+.reg-btn {
   text-align: center;
 }
 
-.btn{
+.btn {
   border-radius: 15px;
-  width:100px;
-  font-size:medium;
+  width: 100px;
+  font-size: medium;
   font-weight: bold;
 }
 
-.input-style{
+.input-style {
   border-radius: 100px;
   border-style: hidden;
-  background-image: linear-gradient(to bottom right,rgb(150, 185, 213),white);
-
+  background-image: linear-gradient(to bottom right, rgb(150, 185, 213), white);
+  width: 450px;
 }
+
 hr.rounded {
   border-top: 3px solid rgb(139, 134, 134);
   border-radius: 5px;
 }
 
-.reg-form-div{
+/* .reg-form-div{
   padding-left: 220px;
   padding-right: 220px;
 
-}
+} */
 
-.reg-login-div{
+.reg-login-div {
   font-style: italic;
   font-weight: bold;
 }
 
-.reg-login-btn{
-width: fit-content;
+.reg-login-btn {
+  width: fit-content;
+}
+
+.reg-div {
+  padding-left: 80px;
+}
+
+@media only screen and (max-width:600px) {
+  .input-style {
+    width: 350px;
+  }
+
+  .reg-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    border-style: hidden;
+    margin-right: 50px;
+  }
+
+  hr.rounded {
+    border-top: 3px solid rgb(139, 134, 134);
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+
+  .reg-btn {
+    margin-right: 40px;
+  }
+
+  .reg-heading{
+    margin-right:50px;
+  }
+
+  /* .bg-class{
+    height:fit-content;
+  } */
+
+  .mq{
+    margin-bottom: 10px;
+  }
+
+  .homepage {
+    background-image: linear-gradient(to bottom right, pink, rgb(44, 79, 135));
+    height:100vh;
+    text-align: center;
+  
+  }
+
 }
 
 
 /* login style start here */
 
-.login-img{
-  height:130px;
+.login-img {
+  height: 130px;
   width: 130px;
   border-radius: 200px;
-  border-style:hidden;
+  border-style: hidden;
 }
 
-.login-img-div{
-margin-top: 40px;
+.login-img-div {
+  margin-top: 40px;
 }
 
-.login-heading{
+.login-heading {
   text-align: center;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -130,22 +182,82 @@ margin-top: 40px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.login-div{
+.login-div {
   padding: 70px;
 }
 
-/* navbar links */
 
-.link-nav{
+/* Navbar styles */
 
-font-size: 15px;  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:#1b2430 ;
+  padding: 5px 40px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
 }
 
-.ml1100{
-  margin-left: 1050px;
+#navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+#navbar li{
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+  margin-top: 10px;
+}
 
-.link-nav:hover{
+#navbar li a{
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+#navbar li a:hover{
+  color:#17cf97;
   cursor: pointer;
+}
+#navbar li a:hover::after{
+  content: "";
+  width:30%;
+  height:2px;
+  background: #17cf97;
+  position: absolute;
+  bottom: -4px;
+  left:20px;
+}
+
+.profile-image{
+  max-width: 150px;
+  max-height: 150px;
+  border:2px solid #1b2430;
+  border-radius: 50%;
+}
+
+.mt20{
+  margin-top: 20px;
+}
+
+.mb10{
+  margin-bottom: 10px;
+}
+
+.mt10{
+  margin-top: 10px;
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table tr td{
+  padding: 15px 10px;
+  border: 0.5px solid #e2e2e2;
 }

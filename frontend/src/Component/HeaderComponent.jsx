@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { FiLogIn } from 'react-icons/fi'
 import { GiNotebook } from 'react-icons/gi'
 import { FaHome } from 'react-icons/fa'
+import { MdMenuBook } from 'react-icons/md'
 
 export const HeaderComponent = () => {
   let navigate = useNavigate();
@@ -19,7 +20,7 @@ export const HeaderComponent = () => {
   return (
     <nav class="navbar bg-primary" >
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1 text-white">ExamPort
+        <span class="navbar-brand mb-0 h1 text-white"><MdMenuBook /> ExamPort
           <a className="ml1100 link-nav" onClick={handleHome}>Homepage <span>< FaHome /></span></a>
           <a className="ml-5 link-nav" onClick={handleSignup}>SignUp <span><GiNotebook /></span></a>
           <a className=" ml-5 link-nav" onClick={handleLogin}>Login <span className=''><FiLogIn /></span></a>

@@ -1,25 +1,39 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import HeaderComponent from './Component/HeaderComponent';
 import Login from './Component/Login'
 import Homepage from './Component/Homepage'
 import { SignUp } from './Component/SignUp';
-import AdminDashboard from './Component/Admin/AdminDashboard'
 import UserDashboard from './Component/User/UserDashboard';
+import NavbarComponent from './Component/NavbarComponent';
+import ProfileComponent from './Component/ProfileComponent';
+import WelcomeComponent from './Component/Admin/WelcomeComponent';
+import ProtectedRoute from './Component/ProtectedRoute';
 
 
 function App() {
+
+
+
   return (
     <div >
       <Router>
-        <HeaderComponent />
+        <NavbarComponent />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/homepage" element={<Homepage />} />
 
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
 
-          <Route path="/admin" element={<AdminDashboard />} />
+          {/* Routes for admin  */}
+
+            <Route path="/admin" element={<ProtectedRoute />} >
+              <Route path="" element={<WelcomeComponent />} />
+              <Route path="profile" element={<ProfileComponent />} />
+            </Route>
+
+          {/* Routes for normal user */}
+
           <Route path="/user-dashboard" element={<UserDashboard />} />
 
         </Routes>

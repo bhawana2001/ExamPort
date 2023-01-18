@@ -44,12 +44,14 @@ export const SignUp = () => {
 
   }
 
-  const handleCancel = (e) => {
-    navigate('/')
-  }
-
   const handleLoginBtn = (e) => {
     navigate("/login");
+  }
+
+  //reset input fields
+  const handleReset = (e) => {
+    e.preventDefault();
+    setuser({ ...user, username: "", password: "", firstname: "", lastname: "", email: "", phone: "" });
   }
 
 
@@ -79,64 +81,68 @@ export const SignUp = () => {
   }
 
   return (
-    <div className='bg-class'>
-      <div className='container p-4'>
 
-        {/* Image tag starts here */}
-        <div className="reg-img-div">
-          <img className="reg-img" src="Images/registration.png" alt="" />
-        </div>
-        {/* Image tag end here */}
+    <div className='bootstrap-wrapper bg-class'>
+      <div className='container'>
+        <div className='row'>
 
-        <h1 className="reg-heading">Register Here !!</h1>
-
-        <div className='reg-form-div'>
-          <form className='reg-form' >
-
-            <div className="form-group">
-              <input type="text" name="username" value={user.username} onChange={handleUsername} className="form-control input-style" id="usernameInput" aria-describedby="username" placeholder="Username*" required />
+          <div className='col-md-6 offset-md-3 reg-div'>
+            {/* Image tag starts here */}
+            <div className="container text-center reg-img-div">
+              <img className="reg-img" src="Images/registration.png" alt="Registration logo" />
             </div>
+            {/* Image tag end here */}
 
-            <div className="form-group">
-              <input type="password" name="password" value={user.password} onChange={handlePassword} className="form-control input-style" id="passwordInput" placeholder="Password*" required />
+            <h1 className="text-center reg-heading">Register Here !!</h1>
+
+            <div className='reg-form-div'>
+              <form className='reg-form' >
+
+                <div className="form-group mq">
+                  <input type="text" name="username" value={user.username} onChange={handleUsername} className="form-control input-style" id="usernameInput" aria-describedby="username" placeholder="Username*" required />
+                </div>
+
+                <div className="form-group mq">
+                  <input type="password" name="password" value={user.password} onChange={handlePassword} className="form-control input-style" id="passwordInput" placeholder="Password*" required />
+                </div>
+
+                <div className="form-group mq">
+                  <input type="text" name="firsname" value={user.firstname} onChange={handleFirstname} className="form-control input-style" id="firstnameInput" placeholder="First Name*" required />
+                </div>
+
+                <div className="form-group mq">
+                  <input type="text" name="lastname" value={user.lastname} onChange={handleLastname} className="form-control input-style" id="lastnameInput" placeholder="Last Name*" required />
+                </div>
+
+                <div className="form-group mq">
+                  <input type="email" name="email" value={user.email} onChange={handleEmail} className="form-control input-style" id="emailInput" placeholder="Email Address*" required />
+                </div>
+
+                <div className="form-group mq">
+                  <input type="text" name="phone" value={user.phone} onChange={handlePhone} className="form-control input-style" id="phoneInput" placeholder="Phone Number*" pattern='[1-9]{1}[0-9]{9}' required />
+                </div>
+
+                <div className='reg-btn'>
+                  <button type="submit" className="btn bg-primary text-white" onClick={handleFormSubmit}>Submit</button>
+                  <button type="reset" className="btn btn-danger text-black ml-3" onClick={handleReset}>Reset</button>
+
+                </div>
+
+                <hr className="rounded"></hr>
+
+                <div className="mt-2">
+                  <div className="d-flex justify-content-center links reg-login-div">
+                    Already have an account?
+                    <button className="btn btn-light ml-3 reg-login-btn" onClick={handleLoginBtn}>Login</button>
+                  </div>
+                </div>
+
+              </form>
             </div>
-
-            <div className="form-group">
-              <input type="text" name="firsname" value={user.firstname} onChange={handleFirstname} className="form-control input-style" id="firstnameInput" placeholder="First Name*" required />
-            </div>
-
-            <div className="form-group">
-              <input type="text" name="lastname" value={user.lastname} onChange={handleLastname} className="form-control input-style" id="lastnameInput" placeholder="Last Name*" required />
-            </div>
-
-            <div className="form-group">
-              <input type="email" name="email" value={user.email} onChange={handleEmail} className="form-control input-style" id="emailInput" placeholder="Email Address*" required />
-            </div>
-
-            <div className="form-group">
-              <input type="number" name="phone" value={user.phone} onChange={handlePhone} className="form-control input-style" id="phoneInput" placeholder="Phone Number*" required />
-            </div>
-
-            <div className='reg-btn'>
-              <button type="submit" className="btn bg-primary text-white" onClick={handleFormSubmit}>Submit</button>
-              <button type="reset" className="btn btn-danger text-black ml-3" onClick={handleCancel}>Cancel</button>
-
-            </div>
-
-
-            <hr className="rounded"></hr>
-            <div className="mt-2">
-              <div className="d-flex justify-content-center links reg-login-div">
-                Already have an account?
-                <button className="btn btn-light ml-3 reg-login-btn" onClick={handleLoginBtn}>Login</button>
-              </div>
-            </div>
-
-          </form>
+          </div>
         </div>
       </div>
     </div>
-
 
 
   )

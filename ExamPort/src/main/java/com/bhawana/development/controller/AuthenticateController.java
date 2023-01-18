@@ -21,6 +21,7 @@ import com.bhawana.development.config.JwtUtil;
 import com.bhawana.development.entities.JwtRequest;
 import com.bhawana.development.entities.JwtResponse;
 import com.bhawana.development.entities.User;
+import com.bhawana.development.helper.UserFoundException;
 import com.bhawana.development.services.Impl.UserDetailsServiceImpl;
 
 @RestController
@@ -47,9 +48,9 @@ public class AuthenticateController {
 			
 			authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
 
-		} catch (UsernameNotFoundException e) {
+		} catch (UserFoundException e) {
 			e.printStackTrace();
-			throw new Exception("User not found");
+			throw new Exception("User found");
 
 		}
 		//authenticated

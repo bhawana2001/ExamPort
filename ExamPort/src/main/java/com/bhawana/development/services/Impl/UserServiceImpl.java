@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.bhawana.development.entities.User;
 import com.bhawana.development.entities.UserRole;
+import com.bhawana.development.helper.UserFoundException;
 import com.bhawana.development.repository.RoleRepository;
 import com.bhawana.development.repository.UserRepository;
 import com.bhawana.development.services.UserService;
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
 		if (local != null) {
 			System.out.println("User is already there!!");
-			throw new Exception("User is already present!!");
+			throw new UserFoundException();
 		} else {
 			// user create
 

@@ -26,6 +26,13 @@ export const Login = () => {
 
   }
 
+  //reset input fields
+  const handleReset = (e) => {
+    e.preventDefault();
+    setlogin({ ...login, username: "", password: "" });
+  }
+
+
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Login form submitted");
@@ -89,7 +96,7 @@ export const Login = () => {
       .catch((err) => {
         console.log("error");
         console.log(err);
-        swal("Something went wrong !!","Invalid Details , Try again","error");
+        swal("Something went wrong !!", "Invalid Details , Try again", "error");
       });
 
 
@@ -101,13 +108,14 @@ export const Login = () => {
     navigate("/signup")
   }
 
+
   return (
     <div className="bootstrap-wrapper bg-class">
       <div className="container">
         <div className="row">
           <div className="col-md-6 offset-md-3 login-div">
             <div className="container text-center login-img-div">
-              <img className="login-img" src="Images/login.jpg" alt="" />
+              <img className="login-img" src="Images/login.jpg" alt="Login logo" />
             </div>
             <h2 className="text-center login-heading">Login Here !!</h2>
             <form className='reg-form'>
@@ -122,10 +130,12 @@ export const Login = () => {
 
               <div className='reg-btn'>
                 <button type="submit" onClick={handleLogin} className="btn bg-primary text-white" >Login</button>
-                <button type="reset" className="btn btn-danger text-black ml-3" >Cancel</button>
+                <button type="reset" onClick={handleReset} className="btn btn-danger text-black ml-3" >Reset</button>
 
               </div>
+
               <hr className="rounded"></hr>
+
               <div className="mt-2">
                 <div className="d-flex justify-content-center links reg-login-div">
                   Don't have an account ?
@@ -134,8 +144,6 @@ export const Login = () => {
               </div>
 
             </form>
-
-
           </div>
         </div>
       </div>
