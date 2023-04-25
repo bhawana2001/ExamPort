@@ -8,6 +8,10 @@ import NavbarComponent from './Component/NavbarComponent';
 import ProfileComponent from './Component/ProfileComponent';
 import WelcomeComponent from './Component/Admin/WelcomeComponent';
 import ProtectedRoute from './Component/ProtectedRoute';
+import ViewCategories from './Component/Admin/ViewCategories';
+import AddCategory from './Component/Admin/AddCategory';
+import  ViewQuizzes  from './Component/Admin/ViewQuizzes';
+import AddQuiz from './Component/Admin/AddQuiz';
 
 
 function App() {
@@ -27,10 +31,15 @@ function App() {
 
           {/* Routes for admin  */}
 
-            <Route path="/admin" element={<ProtectedRoute />} >
-              <Route path="" element={<WelcomeComponent />} />
-              <Route path="profile" element={<ProfileComponent />} />
-            </Route>
+          <Route path="/admin" element={<ProtectedRoute />} >
+            <Route path="" element={<WelcomeComponent />} />
+            <Route path="profile" element={<ProfileComponent />} />
+            <Route path="categories" element={<ViewCategories />} />
+            <Route path="add-category" element={<AddCategory />} />
+            <Route path="quizzes" element={<ViewQuizzes />} />
+            <Route path="add-quiz" element={<AddQuiz />} />
+
+          </Route>
 
           {/* Routes for normal user */}
 

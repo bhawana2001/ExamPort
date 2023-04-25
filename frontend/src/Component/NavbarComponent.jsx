@@ -82,7 +82,7 @@ const NavbarComponent = () => {
                     </a>
                     <div>
                         <ul id="navbar">
-                            <li><a onClick={handleUser}><Tooltip title="Your Profile"> {`${user.firstname} ${user.lastname}`}</Tooltip> </a></li>
+                            <li><a onClick={handleUser}>{`${user.firstname} ${user.lastname}`} </a></li>
                             <li><a onClick={handleLogout}><Tooltip title="Logout"><LogoutIcon /></Tooltip></a></li>
                         </ul>
                     </div>

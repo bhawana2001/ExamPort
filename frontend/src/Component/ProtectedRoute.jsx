@@ -18,7 +18,8 @@ const ProtectedRoute = () => {
 
     //     )
 
-    return LoginService.isLoggedIn() ? <AdminDashboard /> : <Navigate to={"/login"} />
+
+    return LoginService.isLoggedIn() ? <AdminDashboard />  :   <Navigate to={"/login"} />
 
 }
 

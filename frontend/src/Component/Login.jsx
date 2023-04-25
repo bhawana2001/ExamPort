@@ -123,10 +123,12 @@ export const Login = () => {
               <div className="form-group">
                 <input type="text" name="username" value={login.username} onChange={handleUsername} className="form-control input-style" id="usernameInput" aria-describedby="username" placeholder="Username*" required />
               </div>
+              
 
               <div className="form-group">
                 <input type="password" name="password" value={login.password} onChange={handlePassword} className="form-control input-style" id="passwordInput" placeholder="Password*" required />
               </div>
+
 
               <div className='reg-btn'>
                 <button type="submit" onClick={handleLogin} className="btn bg-primary text-white" >Login</button>

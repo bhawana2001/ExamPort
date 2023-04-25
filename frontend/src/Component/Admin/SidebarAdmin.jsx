@@ -27,6 +27,20 @@ const SidebarAdmin = () => {
         navigate("/admin");
     }
 
+    const handleCategories = () => {
+        navigate("/admin/categories");
+    }
+
+    const handleAddCategory = () => {
+        navigate("/admin/add-category");
+    }
+    const handleViewQuizzes =()=>{
+        navigate("/admin/quizzes");
+    }
+    const handleAddQuiz=()=>{
+        navigate("/admin/add-quiz");
+    }
+
     return (
 
         <Card>
@@ -53,7 +67,7 @@ const SidebarAdmin = () => {
                 </ListItem>
 
                 <ListItem disablePadding  >
-                    <ListItemButton onClick={handleProfile}>
+                    <ListItemButton onClick={handleCategories}>
                         <ListItemIcon>
                             <CategoryRoundedIcon />
                         </ListItemIcon>
@@ -62,7 +76,7 @@ const SidebarAdmin = () => {
                 </ListItem>
 
                 <ListItem disablePadding  >
-                    <ListItemButton onClick={handleProfile}>
+                    <ListItemButton onClick={handleAddCategory}>
                         <ListItemIcon>
                             <CreateNewFolderRoundedIcon />
                         </ListItemIcon>
@@ -71,7 +85,7 @@ const SidebarAdmin = () => {
                 </ListItem>
 
                 <ListItem disablePadding  >
-                    <ListItemButton onClick={handleProfile}>
+                    <ListItemButton onClick={handleViewQuizzes}>
                         <ListItemIcon>
                             <QuizRoundedIcon />
                         </ListItemIcon>
@@ -80,7 +94,7 @@ const SidebarAdmin = () => {
                 </ListItem>
 
                 <ListItem disablePadding  >
-                    <ListItemButton onClick={handleProfile}>
+                    <ListItemButton onClick={handleAddQuiz}>
                         <ListItemIcon>
                             <NoteAddRoundedIcon />
                         </ListItemIcon>
